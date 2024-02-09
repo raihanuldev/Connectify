@@ -12,29 +12,32 @@ import SingUp from './pages/SingUp/SingUp.jsx'
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<UserLayout/>,
-    errorElement: <ErrorPage/>,
-    children:[
-    {
-      path:'/',
-      element: <Home/>
-    }]
+    path: '/',
+    element: <UserLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      }, 
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/singup',
+        element: <SingUp />
+      }
+    ]
   },
-  {
-    path:'/login',
-    element:<Login/>
-  },
-  {
-    path: '/singup',
-    element: <SingUp/>
-  }
+
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>,
 )
