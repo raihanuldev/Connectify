@@ -17,6 +17,7 @@ const Nabvar = () => {
                     <div className='flex gap-2 text-2xl font-semibold' >
                         <Link to='/media'>Media</Link>
                         <Link to='/message'>Message</Link>
+                        <Link to='/profile'>About</Link>
                     </div>
                     
                 </div>
@@ -28,7 +29,7 @@ const Nabvar = () => {
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li>
-                            <a className="justify-between">
+                            <a href='/profile' className="justify-between">
                                 Profile
                                 <span className="badge">New</span>
                             </a>
