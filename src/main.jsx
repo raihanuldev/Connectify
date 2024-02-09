@@ -6,7 +6,8 @@ import UserLayout from './Layout/UserLayout.jsx'
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import Home from './pages/home/Home.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
-
+import Login from './pages/Login/Login.jsx'
+import SingUp from './pages/SingUp/SingUp.jsx'
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,14 @@ const router = createBrowserRouter([
       path:'/',
       element: <Home/>
     }]
+  },
+  {
+    path:'/login',
+    element:<Login/>
+  },
+  {
+    path: '/singup',
+    element: <SingUp/>
   }
 ])
 
