@@ -1,13 +1,30 @@
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useContext } from "react";
+import { AuthContex } from "../../Provider/AuthProvider";
 
 const Banner = () => {
-
+    const {user} = useContext(AuthContex)
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => {
-        console.log(data);
-        // You can do further processing with the data here
-        // For example, send it to a backend API
-        // Reset the form, etc.
+
+    const onSubmit = async (formData) => {
+        try {
+            // Check if formData and formData.file exist before accessing
+            if (formData && formData.file) {
+                const formDataToSend = new FormData();
+                formDataToSend.append("image", formData.file[0]);
+                const response = await axios.post("https://api.imgbb.com/1/upload?key=69b4009dc0c51e2fbc2c1455e4b97293", formDataToSend);
+                console.log("Image uploaded successfully:", response.data);
+
+                
+                const newPost = {email: user.email,caption: formData.text,image: response.data.data.url }
+                console.log(newPost)
+            } else {
+                console.error("No file selected.");
+            }
+        } catch (error) {
+            console.error("Error uploading image:", error);
+        }
     };
 
     return (
