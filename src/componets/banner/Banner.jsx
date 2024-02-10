@@ -2,10 +2,12 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Banner = () => {
-    const {user} = useContext(AuthContex)
+    const { user } = useContext(AuthContex)
     const { register, handleSubmit } = useForm();
+    const date = new Date().toISOString();
 
     const onSubmit = async (formData) => {
         try {
@@ -16,17 +18,41 @@ const Banner = () => {
                 const response = await axios.post("https://api.imgbb.com/1/upload?key=69b4009dc0c51e2fbc2c1455e4b97293", formDataToSend);
                 console.log("Image uploaded successfully:", response.data);
 
-                
-                const newPost = {email: user.email,caption: formData.text,image: response.data.data.url }
-                console.log(newPost)
+                const newPost = {
+                    email: user.email,
+                    caption: formData.text,
+                    image: response.data.data.url,
+                    date: date,
+                    like: 1
+                };
+
+                // Send newPost data to  server
+                await axios.post("http://localhost:3000/media", newPost);
+
+                // Show success alert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Post Uploaded!',
+                    text: 'Your post has been successfully uploaded.',
+                    timer: 2000, // Automatically close alert after 2 seconds
+                    showConfirmButton: false
+                });
+                // Close modal after successful upload
+                document.getElementById('my_modal_5').close();
+
             } else {
                 console.error("No file selected.");
             }
         } catch (error) {
             console.error("Error uploading image:", error);
+            // Show error alert
+            Swal.fire({
+                icon: 'error',
+                title: 'Upload Failed',
+                text: 'An error occurred while uploading your post. Please try again later.',
+            });
         }
     };
-
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">

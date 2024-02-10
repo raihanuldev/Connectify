@@ -8,6 +8,7 @@ import Home from './pages/home/Home.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
 import Login from './pages/Login/Login.jsx'
 import SingUp from './pages/SingUp/SingUp.jsx'
+import Media from './pages/media/Media.jsx'
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />
       }, 
+      {
+        path:'/media',
+        element: <Media/>
+      },
       {
         path: '/login',
         element: <Login />
