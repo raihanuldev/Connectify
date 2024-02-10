@@ -4,7 +4,7 @@ const TopPost = () => {
     const [topPost,setTopPost] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:3000/media/top')
+        fetch('https://connectify-server-three.vercel.appmedia/top')
         .then(res=>res.json())
         .then(data=>setTopPost(data))
     },[])

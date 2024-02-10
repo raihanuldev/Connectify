@@ -27,7 +27,7 @@ const Banner = () => {
                 };
 
                 // Send newPost data to  server
-                await axios.post("http://localhost:3000/media", newPost);
+                await axios.post("https://connectify-server-three.vercel.appmedia", newPost);
 
                 // Show success alert
                 Swal.fire({

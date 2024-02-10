@@ -13,7 +13,7 @@ const Profile = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3000/user?email=${user?.email}`)
+        fetch(`https://connectify-server-three.vercel.appuser?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);

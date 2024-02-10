@@ -5,7 +5,7 @@ const Media = () => {
     const [media, setMedia] = useState([]);
     console.log(media)
     useEffect(() => {
-        fetch('http://localhost:3000/media')
+        fetch('https://connectify-server-three.vercel.appmedia')
             .then(res => res.json())
             .then(data => setMedia(data))
     }, [])

@@ -5,7 +5,7 @@ const PopularPost = () => {
     const [popular, setpopular] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/media/popular')
+        fetch('https://connectify-server-three.vercel.appmedia/popular')
             .then(res => res.json())
             .then(data => setpopular(data))
     }, [])

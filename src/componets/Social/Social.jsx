@@ -14,7 +14,7 @@ const Social = () => {
         .then(data=>{
             const loggedUser = data.user;
             const user = { name: loggedUser.displayName, address:'',university:'',photoUrL:loggedUser.photoURL, email: loggedUser.email,firebase: data.user.metadata}
-            fetch('http://localhost:3000/users', {
+            fetch('https://connectify-server-three.vercel.appusers', {
                 method: 'post',
                 headers: {
                     'content-type': 'application/json'
