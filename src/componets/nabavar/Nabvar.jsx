@@ -9,7 +9,7 @@ const Nabvar = () => {
     return (
         <div className="navbar bg-base-300 px-9">
             <div className="flex-1">
-                <a className=" text-2xl font-semibold">Conectify</a>
+                <a href='/' className=" text-2xl font-semibold">Conectify</a>
             </div>
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
