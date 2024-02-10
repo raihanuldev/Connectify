@@ -9,6 +9,8 @@ import AuthProvider from './Provider/AuthProvider.jsx'
 import Login from './pages/Login/Login.jsx'
 import SingUp from './pages/SingUp/SingUp.jsx'
 import Media from './pages/media/Media.jsx'
+import Profile from './pages/Profile/Profile.jsx'
+import EditProfile from './pages/Profile/EditProfile.jsx'
 
 
 const router = createBrowserRouter([
@@ -20,10 +22,18 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/media',
+        element: <Media />
+      },
+      {
+        path: '/profile',
+        element: <Profile />
       }, 
       {
-        path:'/media',
-        element: <Media/>
+        path: '/edit-profile',
+        element: <EditProfile />
       },
       {
         path: '/login',
