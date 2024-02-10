@@ -14,7 +14,7 @@ const Media = () => {
             <h2 className='text-center text-2xl font-sans font-semibold my-3'>Explore All Media</h2>
             <div className='grid grid-cols-3'>
                 {
-                    media.map(post => <MediaCard key={post.id} post={post}/>)
+                    media.map(post => <MediaCard key={post._id} post={post}/>)
                 }
             </div>
         </div>

@@ -11,6 +11,7 @@ import SingUp from './pages/SingUp/SingUp.jsx'
 import Media from './pages/media/Media.jsx'
 import Profile from './pages/Profile/Profile.jsx'
 import EditProfile from './pages/Profile/EditProfile.jsx'
+import Details from './pages/details/Details.jsx'
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/media',
         element: <Media />
+      },
+      {
+        path: '/post-details',
+        element: <Details/>
       },
       {
         path: '/profile',
