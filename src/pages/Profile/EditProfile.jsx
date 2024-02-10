@@ -20,7 +20,7 @@ const EditProfile = () => {
             university: data.university || profile.university,
         };
         // Send PUT request to update the user profile
-        fetch(`https://connectify-server-three.vercel.appuser/${profile._id}`, {
+        fetch(`https://connectify-server-three.vercel.app/user/${profile._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const EditProfile = () => {
     };
 
     useEffect(() => {
-        fetch(`https://connectify-server-three.vercel.appuser?email=${user?.email}`)
+        fetch(`https://connectify-server-three.vercel.app/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);
