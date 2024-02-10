@@ -12,6 +12,7 @@ import Media from './pages/media/Media.jsx'
 import Profile from './pages/Profile/Profile.jsx'
 import EditProfile from './pages/Profile/EditProfile.jsx'
 import Details from './pages/details/Details.jsx'
+import PrivateRoute from './Provider/PrivateRoute.jsx'
 
 
 const router = createBrowserRouter([
@@ -30,11 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/post-details',
-        element: <Details/>
+        element: <PrivateRoute><Details/></PrivateRoute>
       },
       {
         path: '/profile',
-        element: <Profile />
+        element: <PrivateRoute><Profile /></PrivateRoute>
       }, 
       {
         path: '/edit-profile',

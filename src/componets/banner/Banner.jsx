@@ -53,6 +53,18 @@ const Banner = () => {
             });
         }
     };
+    const openModal = () => {
+        if (user) {
+            document.getElementById('my_modal_5').showModal();
+        } else {
+            // Prompt user to sign in or register
+            Swal.fire({
+                icon: 'warning',
+                title: 'Sign In Required',
+                text: 'You need to sign in or register to create a new post.',
+            });
+        }
+    };
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -60,7 +72,7 @@ const Banner = () => {
                 <div>
                     <h1 className="text-5xl font-bold">Stay Connect with Connectify!</h1>
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-primary" onClick={() => document.getElementById('my_modal_5').showModal()}>Create New Post</button>
+                    <button className="btn btn-primary" onClick={openModal}>Create New Post</button>
                 </div>
             </div>
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">

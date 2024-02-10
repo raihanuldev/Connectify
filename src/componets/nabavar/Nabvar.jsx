@@ -16,7 +16,7 @@ const Nabvar = () => {
                    
                     <div className='flex gap-2 text-2xl font-semibold' >
                         <Link to='/media'>Media</Link>
-                        <Link to='/message'>Message</Link>
+                        <Link >Message</Link>
                         <Link to='/profile'>About</Link>
                     </div>
                     
